@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class TreeNode {
@@ -47,9 +46,7 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return data +
-                ":" + Arrays.toString(children.toArray())
-                ;
+        return data + ":" + Arrays.toString(children.toArray());
     }
 
 
@@ -57,21 +54,18 @@ public class TreeNode {
         System.out.println(this.getData());
     }
 
-    public static boolean replaceNode (TreeNode from, TreeNode to) {
+    public static void replaceNode(TreeNode from, TreeNode to) {
         TreeNode father = from.getFather();
         for (int i = 1; i <= father.getChildren().size(); i++) {
             if (father.getChildren().get(i-1) == from) {
                 father.getChildren().set(i-1,to);
                 to.setFather(father);
                 from.setFather(null);
-                return true;
             }
         }
-        return false;
     }
 
     public TreeNode nodeClone () {
-        if (this == null) return null;
         TreeNode node = new TreeNode(this.data);
 
         for (TreeNode t : this.getChildren()) {

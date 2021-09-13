@@ -15,9 +15,7 @@ public class TreeSetter {
         i = 1;
 
         while (i <= data.length) {
-
             trees.add(setTree(data));
-
         }
 
 
@@ -26,19 +24,13 @@ public class TreeSetter {
         return output;
     }
 
-    public static TreeNode setTree(String[] data) {
 
-        TreeNode a = setTreeTmp(data);
-        return a;
-
-    }
-
-    public static TreeNode setTreeTmp (String[] data) {
+    public static TreeNode setTree (String[] data) {
         TreeNode father = new TreeNode(data[i-1]);
         i++;
         while (!data[i - 1].equals(")")) {
             if (data[i-1].equals("(")) {
-                setTreeTmp(data).addFather(father);
+                setTree(data).addFather(father);
             } else {
                 (new TreeNode(data[i-1])).addFather(father);
                 i++;

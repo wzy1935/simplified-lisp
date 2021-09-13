@@ -5,7 +5,6 @@ public class Calculator {
 
     public static HashMap<TreeNode,TreeNode> environment = new HashMap<>();
     private static final HashSet<String> operatorBasics = new HashSet<String>(Arrays.asList("+","-","*","/","%"));
-    private static final HashSet<String> operatorLogical = new HashSet<String>(Arrays.asList("and","or",">","<","=",">=","<=","!="));
 
     public static TreeNode calculate (TreeNode node, boolean print) {
         TreeNode[] children = new TreeNode[node.getChildren().size()];
@@ -126,7 +125,7 @@ public class Calculator {
             }
         }
 
-        if (print) if (print) Frame.println(tmp + "");;
+        if (print) Frame.println(tmp + "");;
         return new TreeNode(String.valueOf(tmp));
 
     }
